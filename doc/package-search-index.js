@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.airline"},{"l":"com.dao"},{"l":"com.model"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.controller"},{"l":"com.dao"},{"l":"com.model"}];updateSearchResults();
