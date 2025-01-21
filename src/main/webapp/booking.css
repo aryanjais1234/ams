@@ -1,0 +1,139 @@
+@CHARSET "ISO-8859-1";
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;  /* Cooler tone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.booking-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+h2 {
+    color: #4a90e2;  /* Cooler tone */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.booking-form .form-group {
+    margin-bottom: 20px;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #004d40;  /* Cooler tone */
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.booking-form input[type="submit"] {
+    background-color: #4a90e2;  /* Cooler tone */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 14px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.booking-form input[type="submit"]:hover {
+    background-color: #4a90e2;
+}
+
+.booking-form .btn-confirm {
+    width: 100%;
+    font-size: 18px;
+}
+
+
+.confirmation-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-container h2 {
+    color: #28a745;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.tick-mark {
+    margin: 0 auto 20px;
+    width: 52px;
+    height: 52px;
+}
+
+.tick-circle {
+    stroke: #28a745;
+    stroke-width: 4;
+    fill: none;
+    animation: tick-circle-animation 0.6s ease;
+}
+
+.tick-path {
+    stroke-dasharray: 29.7833385, 29.7833385;
+    stroke-dashoffset: 29.7833385;
+    animation: tick-path-animation 0.3s 0.4s ease forwards;
+}
+
+@keyframes tick-circle-animation {
+    0% {
+        stroke-dasharray: 0, 157;
+        stroke-dashoffset: 157;
+    }
+    100% {
+        stroke-dasharray: 157, 157;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes tick-path-animation {
+    0% {
+        stroke-dashoffset: 29.7833385;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.btn-confirm {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-confirm:hover {
+    background-color: #218838;
+}

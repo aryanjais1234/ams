@@ -1,0 +1,69 @@
+CREATE TABLE USERS (
+    USERID INT PRIMARY KEY,  
+    PASSWORD VARCHAR(100),           
+    FIRSTNAME VARCHAR(100),          
+    LASTNAME VARCHAR(100),            
+    PHONE VARCHAR(15),                
+    EMAILID VARCHAR(100),            
+    ADDRESS1 VARCHAR(255),            
+    DOB DATE                          
+)
+
+
+
+CREATE TABLE Carrier (
+    carrierId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    carrierName VARCHAR(50) NOT NULL,
+    Days30 DECIMAL(5, 2),
+    Days60 DECIMAL(5, 2),
+    Days90 DECIMAL(5, 2),
+    bulkBooking DECIMAL(5, 2),
+    silverUser DECIMAL(5, 2),
+    goldUser DECIMAL(5, 2),
+    platinumUser DECIMAL(5, 2),
+    DaysBeforeTravelDate2 DECIMAL(5, 2),
+    DaysBeforeTravelDate10 DECIMAL(5, 2),
+    DaysOrMoreBeforeTravelDate20 DECIMAL(5, 2)
+);
+
+Select * from Users;
+Show columns from Carrier;
+
+CREATE TABLE Flight (
+    flightId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    carrierId INT NOT NULL,
+    origin VARCHAR(100) NOT NULL,
+    destination VARCHAR(100) NOT NULL,
+    airFare DECIMAL(10, 2) NOT NULL,
+    businessClassSeats INT NOT NULL,
+    economyClassSeats INT NOT NULL,
+    executiveClassSeats INT NOT NULL,
+    FOREIGN KEY (carrierId) REFERENCES Carrier(carrierId) on delete cascade
+);
+
+
+	
+CREATE TABLE FlightBooking (
+    bookingId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    flightId INT NOT null,
+    USERID INT NOT NULL,
+    noOfSeats INT NOT NULL,
+    seatCategory VARCHAR(20) NOT NULL,
+    dateOfTravel VARCHAR(20) NOT NULL, 
+    bookingStatus VARCHAR(20) NOT NULL, 
+    bookingAmount DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (USERID) REFERENCES USERS(USERID) on delete cascade,
+    FOREIGN KEY (FLIGHTID) REFERENCES FLIGHT(FLIGHTID) on delete cascade
+);
+
+ALTER TABLE Users 
+ALTER COLUMN password 
+SET DATA TYPE VARCHAR(255);
+
+	
+ALTER TABLE Flight
+ADD COLUMN status VARCHAR(10) DEFAULT 'Active';
+
+ALTER TABLE Carrier
+ADD COLUMN status VARCHAR(10) DEFAULT 'Active';
+	

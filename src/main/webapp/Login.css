@@ -1,0 +1,120 @@
+@CHARSET "ISO-8859-1";
+
+body {
+    background-color: #f0f4f7; /* Light and soft background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Softer text color */
+    height: 100vh;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    margin: 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #4a90e2; /* Modern blue color */
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8); /* White with slight transparency */
+    width: 400px;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 40px;
+    transition: all 0.4s ease-in-out;
+}
+
+.login-container:hover {
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2); /* On hover effect */
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #4a4a4a; /* Slightly darker label */
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    
+    font-size: 18px;
+    color: #888; /* Softer icon color */
+    transition: color 0.3s;
+}
+
+.form-group input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 40px; /* Adjust padding for better spacing */
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4a90e2; /* Focus effect */
+    background-color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #357ABD; /* Darker blue on hover */
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.register a:hover {
+    color: #357ABD;
+}
+
+#error p {
+    color: #d9534f; /* Red for error message */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Animation for input focus */
+input[type="text"], input[type="password"] {
+    position: relative;
+    z-index: 1;
+}
+
+input[type="text"]:focus + i,
+input[type="password"]:focus + i {
+    color: #4a90e2;
+}
